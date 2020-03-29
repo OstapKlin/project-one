@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MY first site</title>
+    <link rel="stylesheet" href="css/main.css"
+</head>
+<body>
+    <header>
+        <div id="logo" onclick="('#top')">
+            <span>Site of alex</span>
+        </div>
+        <div id="about">
+            <a href ="#" title="title" onclick="slowScroll('#main')">title</a>
+            <a href ="#" title="other title" onclick="slowScroll('#main')">Other title</a>
+            <a href ="#" title="faq" onclick="slowScroll('#main')">FAQ</a>
+            <a href ="#" title="Last title" onclick="slowScroll('#main')">lAst titlle</a>
+        </div>
+    </header>
+
+    <div id="top">
+        <h1>Programming</h1>
+        <h3>Is my life</h3>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        function slowScroll(id) {
+            $('html, body').animate({
+                scrollTop: $(id).offset().top
+            }, 500);
+        }
+
+        $(document).on("scroll", function () {
+            if($(window).scrollTop() === 0)
+            $("header").removeClass("fixed") 
+            else
+            $("header").attr("class", "fixed");
+        });
+
+        
+    </script>
+</body>
+</html>
